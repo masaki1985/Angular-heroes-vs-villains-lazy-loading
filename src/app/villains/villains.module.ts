@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from '../core/in-memory-data.service';
 
-import { HeroComponent } from './hero/hero.component';
-import { HeroesComponent } from './heroes.component';
-import { HeroListComponent } from './hero-list/hero-list.component';
-import { HeroService } from './shared/hero.service';
-import { HeroesRoutingModule } from './heroes-routing.module';
+import { VillainComponent } from "app/villains/villain/villain.component";
+import { VillainsComponent } from "app/villains/villains.component";
+import { VillainListComponent } from "app/villains/villain-list/villain-list.component";
+import { VillainService } from "app/villains/shared/villain.service";
+import { VillainsRoutingModule } from './villains-routing.module';
 import { HttpModule } from "@angular/http";
 import { FormsModule } from "@angular/forms";
 import { AuthGuard } from "app/shared/auth.guard";
@@ -15,21 +15,21 @@ import { UserProfileService } from "app/core/user-profile.service";
 
 @NgModule({
   declarations: [
-    HeroComponent,
-    HeroesComponent,
-    HeroListComponent,
+    VillainComponent,
+    VillainsComponent,
+    VillainListComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
-    HeroesRoutingModule,
+    VillainsRoutingModule
   ],
   providers: [
-    HeroService,
+    VillainService,
     UserProfileService,
-    AuthGuard,    
+    AuthGuard,  
   ],
 })
-export class HeroesModule { }
+export class VillainsModule { }

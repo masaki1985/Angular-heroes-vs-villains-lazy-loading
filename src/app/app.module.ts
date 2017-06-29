@@ -18,26 +18,24 @@ import { UserProfileService } from './core/user-profile.service';
 import { AuthGuard } from './shared/auth.guard';
 import { LoginComponent } from './login/login.component';
 import { HeroesModule } from "app/heroes/heroes.module";
+import { VillainsModule } from "app/villains/villains.module";
 
 @NgModule({
   declarations: [
     AppComponent,
     ZeroPaddingPipe,
-    VillainsComponent,
-    VillainComponent,
-    VillainListComponent,
     LoginComponent,
   ],
   imports: [
     BrowserModule,
     HeroesModule,
+    VillainsModule,
     AppRoutingModule,
     FormsModule,
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
   ],
   providers: [
-    VillainService,
     UserProfileService,
     AuthGuard,    
   ],

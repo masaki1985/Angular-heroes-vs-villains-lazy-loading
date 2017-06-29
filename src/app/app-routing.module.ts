@@ -23,22 +23,8 @@ const routes: Routes = [
   },
   {
     path: 'villains',
-    canActivate: [AuthGuard],    
-    children: [
-      {
-        path: 'villain/:id',
-        component: VillainComponent
-      },
-      {
-        path: 'villain-list',
-        component: VillainListComponent
-      },
-      {
-        path: '**',
-        redirectTo: 'villain-list',
-      }
-    ]
-  }
+    loadChildren: './villains/villains.mocule#VillainsModule',
+  },
 ];
 
 @NgModule({
