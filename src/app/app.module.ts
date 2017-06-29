@@ -9,10 +9,6 @@ import { InMemoryDataService }  from './core/in-memory-data.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeroComponent } from './heroes/hero/hero.component';
-import { HeroesComponent } from './heroes/heroes.component';
-import { HeroListComponent } from './heroes/hero-list/hero-list.component';
-import { HeroService } from './heroes/shared/hero.service';
 import { ZeroPaddingPipe } from './shared/zero-padding.pipe';
 import { VillainComponent } from './villains/villain/villain.component';
 import { VillainsComponent } from './villains/villains.component';
@@ -21,13 +17,11 @@ import { VillainService } from './villains/shared/villain.service';
 import { UserProfileService } from './core/user-profile.service';
 import { AuthGuard } from './shared/auth.guard';
 import { LoginComponent } from './login/login.component';
+import { HeroesModule } from "app/heroes/heroes.module";
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeroComponent,
-    HeroesComponent,
-    HeroListComponent,
     ZeroPaddingPipe,
     VillainsComponent,
     VillainComponent,
@@ -36,13 +30,13 @@ import { LoginComponent } from './login/login.component';
   ],
   imports: [
     BrowserModule,
+    HeroesModule,
     AppRoutingModule,
     FormsModule,
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
   ],
   providers: [
-    HeroService,
     VillainService,
     UserProfileService,
     AuthGuard,    

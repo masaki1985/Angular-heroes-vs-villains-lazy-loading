@@ -19,21 +19,7 @@ const routes: Routes = [
   },
   {
     path: 'heroes',
-    canActivate: [AuthGuard],
-    children: [
-      {
-        path: 'hero/:id',
-        component: HeroComponent
-      },
-      {
-        path: 'hero-list',
-        component: HeroListComponent
-      },
-      {
-        path: '**',
-        redirectTo: 'hero-list',
-      }
-    ]
+    loadChildren: './heroes/heroes.module#HeroesModule',
   },
   {
     path: 'villains',
