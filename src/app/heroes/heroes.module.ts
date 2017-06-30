@@ -10,8 +10,8 @@ import { HeroService } from './shared/hero.service';
 import { HeroesRoutingModule } from './heroes-routing.module';
 import { HttpModule } from "@angular/http";
 import { FormsModule } from "@angular/forms";
-import { AuthGuard } from "app/shared/auth.guard";
 import { UserProfileService } from "app/core/user-profile.service";
+import { SharedModule } from "app/shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -25,11 +25,11 @@ import { UserProfileService } from "app/core/user-profile.service";
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
     HeroesRoutingModule,
+    SharedModule,
   ],
   providers: [
     HeroService,
-    UserProfileService,
-    AuthGuard,    
+    UserProfileService,   
   ],
 })
 export class HeroesModule { }

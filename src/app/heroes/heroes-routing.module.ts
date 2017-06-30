@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
 import { AuthGuard } from "app/shared/auth.guard";
 import { HeroComponent } from "app/heroes/hero/hero.component";
 import { HeroListComponent } from "app/heroes/hero-list/hero-list.component";

@@ -10,8 +10,8 @@ import { VillainService } from "app/villains/shared/villain.service";
 import { VillainsRoutingModule } from './villains-routing.module';
 import { HttpModule } from "@angular/http";
 import { FormsModule } from "@angular/forms";
-import { AuthGuard } from "app/shared/auth.guard";
 import { UserProfileService } from "app/core/user-profile.service";
+import { SharedModule } from "app/shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -24,12 +24,12 @@ import { UserProfileService } from "app/core/user-profile.service";
     FormsModule,
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
-    VillainsRoutingModule
+    VillainsRoutingModule,
+    SharedModule,
   ],
   providers: [
     VillainService,
     UserProfileService,
-    AuthGuard,  
   ],
 })
 export class VillainsModule { }
