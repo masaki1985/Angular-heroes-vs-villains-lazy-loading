@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AuthGuard } from "app/shared/auth.guard";
 import { HeroComponent } from "app/heroes/hero/hero.component";
 import { HeroListComponent } from "app/heroes/hero-list/hero-list.component";
+import { AuthGuard } from "app/core/auth.guard";
 
 const routes: Routes = [
   {
-    path: 'heroes',
+    path: '',
     canActivate: [AuthGuard],
     children: [
       {

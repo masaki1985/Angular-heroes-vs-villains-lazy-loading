@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ZeroPaddingPipe } from './zero-padding.pipe';
-import { AuthGuard } from "app/shared/auth.guard";
 
 @NgModule({
   imports: [
@@ -14,8 +13,6 @@ import { AuthGuard } from "app/shared/auth.guard";
   exports: [
     ZeroPaddingPipe,
   ],
-  providers: [
-    AuthGuard,
-  ],
+  providers: [],
 })
 export class SharedModule { }
