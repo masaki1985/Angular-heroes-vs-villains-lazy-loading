@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormGroup } from '@angular/forms';
 
 import { UserProfileService, LoginRequest } from '../core/user-profile.service';
-import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-login',

@@ -5,7 +5,6 @@ import { HeroComponent } from './heroes/hero/hero.component';
 import { HeroListComponent } from './heroes/hero-list/hero-list.component';
 import { VillainComponent } from './villains/villain/villain.component';
 import { VillainListComponent } from './villains/villain-list/villain-list.component';
-import { AuthGuard } from './shared/auth.guard';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
@@ -19,40 +18,12 @@ const routes: Routes = [
   },
   {
     path: 'heroes',
-    canActivate: [AuthGuard],
-    children: [
-      {
-        path: 'hero/:id',
-        component: HeroComponent
-      },
-      {
-        path: 'hero-list',
-        component: HeroListComponent
-      },
-      {
-        path: '**',
-        redirectTo: 'hero-list',
-      }
-    ]
+    loadChildren: './heroes/heroes.module#HeroesModule',
   },
   {
     path: 'villains',
-    canActivate: [AuthGuard],    
-    children: [
-      {
-        path: 'villain/:id',
-        component: VillainComponent
-      },
-      {
-        path: 'villain-list',
-        component: VillainListComponent
-      },
-      {
-        path: '**',
-        redirectTo: 'villain-list',
-      }
-    ]
-  }
+    loadChildren: './villains/villains.module#VillainsModule',
+  },
 ];
 
 @NgModule({
