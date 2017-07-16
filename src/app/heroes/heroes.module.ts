@@ -8,28 +8,24 @@ import { HeroesComponent } from './heroes.component';
 import { HeroListComponent } from './hero-list/hero-list.component';
 import { HeroService } from './shared/hero.service';
 import { HeroesRoutingModule } from './heroes-routing.module';
-import { HttpModule } from "@angular/http";
-import { FormsModule } from "@angular/forms";
-import { UserProfileService } from "app/core/user-profile.service";
 import { SharedModule } from "app/shared/shared.module";
+import { UserProfileService } from "app/core/user-profile.service";
 
 @NgModule({
   declarations: [
     HeroComponent,
     HeroesComponent,
-    HeroListComponent,
+    HeroListComponent
   ],
   imports: [
     CommonModule,
-    FormsModule,
-    HttpModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService),
-    HeroesRoutingModule,
     SharedModule,
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
+    HeroesRoutingModule
   ],
   providers: [
     HeroService,
-    UserProfileService,   
-  ],
+    UserProfileService   
+  ]
 })
 export class HeroesModule { }
